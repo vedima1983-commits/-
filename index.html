@@ -1,0 +1,1938 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Питомник груш №1 | Оптовая продажа саженцев груши в РФ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #122b1c;
+      --primary-light: #1f472f;
+      --primary-dark: #09170f;
+      --accent: #d99b38;
+      --accent-bright: #f5b041;
+      --accent-hover: #bf8327;
+      --bg: #f5f8f5;
+      --surface: #ffffff;
+      --text: #1d2721;
+      --text-muted: #536359;
+      --border: #dbe4dc;
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --shadow-sm: 0 4px 12px rgba(18, 38, 26, 0.05);
+      --shadow-md: 0 12px 30px rgba(18, 38, 26, 0.08);
+      --shadow-lg: 0 20px 45px rgba(18, 38, 26, 0.14);
+      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .shimmer-btn {
+      background: linear-gradient(270deg, #d99b38, #f5b041, #f9d976, #f5b041, #d99b38);
+      background-size: 300% 300%;
+      animation: shimmer 5s ease infinite;
+      color: #0b1710 !important;
+      border: none !important;
+      font-weight: 800 !important;
+      box-shadow: 0 4px 20px rgba(217, 155, 56, 0.4);
+    }
+    .shimmer-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(217, 155, 56, 0.6);
+    }
+
+    /* ШАПКА */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(18, 43, 28, 0.1);
+      box-shadow: 0 4px 20px rgba(18, 43, 28, 0.06);
+    }
+
+    .nav-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+    .logo img {
+      height: 48px;
+      width: 48px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      flex-shrink: 0;
+    }
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .logo-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.15;
+      letter-spacing: -0.3px;
+    }
+    .logo-subtitle {
+      font-size: 0.7rem;
+      color: var(--accent-hover);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #2b3a30;
+      font-weight: 600;
+      font-size: 0.88rem;
+      padding: 8px 14px;
+      border-radius: 10px;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+    .nav-links a:hover {
+      background: rgba(21, 128, 61, 0.1);
+      color: var(--primary-light);
+      box-shadow: 0 2px 8px rgba(21, 128, 61, 0.08);
+    }
+
+    .header-contacts {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .phone-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 12px;
+      background: #f0f6f2;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    .phone-card:hover {
+      background: #e4efe7;
+      border-color: var(--primary-light);
+      transform: translateY(-1px);
+    }
+    .header-phone {
+      font-weight: 800;
+      color: var(--primary);
+      font-size: 1.05rem;
+      line-height: 1.15;
+    }
+    .header-sub {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* КНОПКИ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      font-size: 0.95rem;
+    }
+    .btn-accent {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 4px 18px rgba(18, 43, 28, 0.3);
+    }
+    .btn-accent:hover {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(18, 43, 28, 0.4);
+    }
+    .btn-outline {
+      border: 1.5px solid rgba(18, 43, 28, 0.4);
+      color: var(--primary-dark);
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(8px);
+    }
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background: var(--primary);
+      color: #fff;
+    }
+    .btn-secondary:hover {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    /* HERO С УТП-ОФФЕРОМ */
+    .hero {
+      position: relative;
+      background: url('Фон.jpg') center center / cover no-repeat;
+      padding: 110px 0 90px;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.45) 0%, rgba(245, 248, 245, 0.25) 50%, rgba(255, 255, 255, 0.5) 100%);
+      z-index: 1;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-content-box {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(16px);
+      padding: 38px;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 16px 40px rgba(18, 43, 28, 0.12);
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(21, 128, 61, 0.12);
+      border: 1px solid rgba(21, 128, 61, 0.3);
+      color: var(--primary-dark);
+      padding: 6px 16px;
+      border-radius: 99px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      line-height: 1.18;
+      margin-bottom: 16px;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+    .hero h1 span {
+      color: var(--accent-hover);
+      font-style: italic;
+    }
+
+    /* УТП ОФФЕР БЛОК */
+    .utp-banner {
+      background: linear-gradient(135deg, #09170f 0%, #122b1c 100%);
+      color: #fff;
+      border-left: 4px solid var(--accent-bright);
+      padding: 16px 20px;
+      border-radius: 14px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 25px rgba(18, 38, 26, 0.2);
+    }
+    .utp-banner p {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fefefe;
+      line-height: 1.4;
+      margin: 0;
+    }
+    .utp-banner span {
+      color: var(--accent-bright);
+      text-shadow: 0 0 10px rgba(245, 176, 65, 0.3);
+    }
+
+    .hero p.hero-desc {
+      font-size: 1.02rem;
+      color: #2c4234;
+      margin-bottom: 28px;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+    .hero-btn-row { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    .hero-stats-panel {
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      box-shadow: 0 16px 40px rgba(18, 43, 28, 0.12);
+    }
+    .stat-card {
+      border-left: 3.5px solid var(--accent);
+      padding-left: 14px;
+    }
+    .stat-number {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+      font-weight: 600;
+    }
+
+    /* СЕКЦИИ */
+    .section-spacing { padding: 90px 0; }
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 50px;
+    }
+    .section-badge {
+      display: inline-block;
+      color: var(--accent);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      letter-spacing: 1.5px;
+      margin-bottom: 12px;
+    }
+    .section-header h2 {
+      font-size: 2.4rem;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* ПРЕИМУЩЕСТВА С ИКОНКАМИ */
+    .advantages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+    .adv-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px 30px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .adv-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: #cbdad0;
+    }
+    .adv-icon-wrap {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, rgba(21, 128, 61, 0.08) 0%, rgba(21, 128, 61, 0.18) 100%);
+      color: var(--primary);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+      transition: var(--transition);
+    }
+    .adv-card:hover .adv-icon-wrap {
+      background: var(--primary);
+      color: var(--accent-bright);
+      transform: scale(1.05);
+    }
+    .adv-icon-wrap svg {
+      width: 30px;
+      height: 30px;
+      stroke-width: 2;
+    }
+    .adv-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+    .adv-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    /* ВИДЕОБЛОК (RUTUBE) */
+    .video-section {
+      background: var(--primary-dark);
+      padding: 90px 0;
+      color: #fff;
+    }
+    .video-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+      border: 1px solid rgba(255,255,255,0.15);
+      background: #000;
+      aspect-ratio: 16/9;
+    }
+    .video-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: none;
+    }
+
+    /* БЛОК "НАШ УРОЖАЙ" СО СТРАХОВКОЙ ИМЕН И ФОРМАТОВ */
+    .harvest-section {
+      background: #ffffff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 90px 0;
+    }
+    .harvest-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .harvest-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 300px;
+      box-shadow: 0 8px 25px rgba(18, 38, 26, 0.08);
+      border: 1px solid var(--border);
+      background: #122b1c;
+      cursor: pointer;
+    }
+    .harvest-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      display: block;
+    }
+    .harvest-card:hover img {
+      transform: scale(1.12);
+    }
+    .harvest-info {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(9, 23, 15, 0.88) 100%);
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      color: #fff;
+      pointer-events: none;
+    }
+    .harvest-info span {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #f1f7f3;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    /* КАРТОЧКИ СОРТОВ */
+    .varieties-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 28px;
+    }
+    .variety-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .variety-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent);
+    }
+    .variety-card:hover .variety-header-photo {
+      transform: scale(1.06);
+    }
+    .variety-photo-wrapper {
+      position: relative;
+      height: 210px;
+      overflow: hidden;
+      background-color: #dbe4dc;
+    }
+    .variety-header-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .variety-photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(9, 23, 15, 0.88) 100%);
+      display: flex;
+      align-items: flex-end;
+      padding: 16px 20px;
+    }
+    .variety-pill {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(9, 23, 15, 0.82);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 99px;
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+    .variety-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .variety-quick-specs {
+      list-style: none;
+      margin: 16px 0;
+      font-size: 0.88rem;
+    }
+    .variety-quick-specs li {
+      padding: 6px 0;
+      border-bottom: 1px dashed var(--border);
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-muted);
+    }
+    .variety-quick-specs li strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+    .btn-more {
+      width: 100%;
+      background: #f0f6f2;
+      color: var(--primary);
+      border: 1px solid #d4e3d9;
+      font-weight: 700;
+      padding: 12px;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 0.9rem;
+      display: inline-block;
+      text-align: center;
+    }
+    .btn-more:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* РЕЕСТР ОСТАТКОВ И ФОРМА В НЕМ */
+    .table-container {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+    .filter-bar {
+      padding: 22px 24px;
+      background: #fdfefe;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .tab-group { display: flex; gap: 8px; }
+    .tab-btn {
+      padding: 10px 18px;
+      border-radius: var(--radius-md);
+      font-size: 0.9rem;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+    .table-responsive { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; text-align: left; }
+    th, td { padding: 16px 22px; border-bottom: 1px solid var(--border); }
+    th {
+      background: #f4f8f5;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    tr:hover td { background: #fafdfb; }
+    .badge-tag {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .badge-grade1 { background: #e3f2e7; color: #1e6634; }
+    .badge-grade2 { background: #fdf1d9; color: #9c6c13; }
+    .badge-cold { background: #e3f2fd; color: #0d47a1; margin-left: 6px; }
+
+    /* ФОРМА ВНУТРИ БЛОКА РЕЕСТРА */
+    .catalog-lead-box {
+      background: #f4f8f5;
+      padding: 30px 40px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .catalog-lead-text h4 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 6px;
+      font-family: 'Playfair Display', serif;
+    }
+    .catalog-lead-text p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+    .catalog-lead-form {
+      display: flex;
+      gap: 12px;
+      flex: 1;
+      max-width: 500px;
+    }
+    .catalog-input {
+      flex: 1;
+      padding: 12px 18px;
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      background: #fff;
+      font-size: 0.95rem;
+      outline: none;
+      font-family: inherit;
+    }
+    .catalog-input:focus {
+      border-color: var(--primary);
+    }
+
+    /* КАЛЬКУЛЯТОР */
+    .calculator-section {
+      background: linear-gradient(180deg, var(--bg) 0%, #e6eee7 100%);
+      padding: 90px 0;
+    }
+    .calculator-wrapper {
+      background: #091b11;
+      border-radius: 24px;
+      color: #ffffff;
+      padding: 48px;
+      box-shadow: 0 25px 60px rgba(9, 27, 17, 0.45);
+      border: 1px solid #1a3f29;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+    }
+    .calc-header-tag {
+      color: var(--accent-bright);
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .calc-title {
+      font-size: 2.2rem;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: #ffffff;
+      font-family: 'Playfair Display', serif;
+    }
+    .calc-subtitle {
+      color: #cbdad0;
+      font-size: 0.95rem;
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+    .calc-form-group {
+      margin-bottom: 22px;
+    }
+    .calc-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 0.92rem;
+      color: #f1f7f3;
+      font-weight: 700;
+    }
+    .calc-label span.note {
+      font-size: 0.8rem;
+      color: var(--accent-bright);
+      font-weight: 600;
+    }
+    .calc-select, .calc-input-number {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1.5px solid #235438;
+      background: #102619;
+      color: #ffffff;
+      font-size: 1.05rem;
+      font-weight: 600;
+      outline: none;
+      transition: var(--transition);
+      font-family: inherit;
+    }
+    .calc-select:focus, .calc-input-number:focus {
+      border-color: var(--accent-bright);
+      background: #143020;
+      box-shadow: 0 0 0 3px rgba(245, 176, 65, 0.2);
+    }
+    .calc-select option {
+      background: #0d2215;
+      color: #ffffff;
+    }
+    .calc-range {
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: #1b3d29;
+      outline: none;
+      margin-top: 12px;
+      accent-color: var(--accent-bright);
+      cursor: pointer;
+    }
+
+    .calc-summary-card {
+      background: #112d1c;
+      border: 1px solid #245839;
+      border-radius: 20px;
+      padding: 36px 32px;
+      text-align: center;
+      box-shadow: inset 0 2px 8px rgba(255,255,255,0.04);
+    }
+    .calc-val-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #9eb7a8;
+      font-weight: 700;
+    }
+    .calc-price-display {
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: var(--accent-bright);
+      margin: 12px 0 16px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      text-shadow: 0 4px 18px rgba(245, 176, 65, 0.25);
+    }
+    .calc-features-list {
+      list-style: none;
+      text-align: left;
+      font-size: 0.9rem;
+      color: #e2ede6;
+      margin-bottom: 26px;
+    }
+    .calc-features-list li {
+      padding: 5px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .calc-features-list li::before {
+      content: '✓';
+      color: var(--accent-bright);
+      font-weight: 800;
+    }
+
+    /* ФОРМА ЗАХВАТА / ОБРАТНОГО ЗВОНКА В ТЕМНОМ СТИЛЕ */
+    .lead-section {
+      background: linear-gradient(135deg, #09170f 0%, #122b1c 100%);
+      padding: 90px 0;
+      color: #fff;
+    }
+    .lead-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(17, 45, 28, 0.6);
+      backdrop-filter: blur(16px);
+      border: 1.5px solid #245839;
+      border-radius: 24px;
+      padding: 48px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+      text-align: center;
+    }
+    .lead-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .lead-input {
+      width: 100%;
+      padding: 16px 20px;
+      border-radius: 12px;
+      border: 1.5px solid #235438;
+      background: #102619;
+      color: #ffffff;
+      font-size: 1rem;
+      outline: none;
+      font-family: inherit;
+      transition: var(--transition);
+    }
+    .lead-input:focus {
+      border-color: var(--accent-bright);
+      box-shadow: 0 0 0 3px rgba(245, 176, 65, 0.2);
+    }
+    .lead-input::placeholder { color: #8fa397; }
+
+    /* МОДАЛЬНЫЕ ОКНА */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(9, 23, 15, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    .modal-overlay.active { 
+      opacity: 1; 
+      visibility: visible; 
+    }
+    .modal-card {
+      background: #ffffff;
+      border-radius: 24px;
+      max-width: 680px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+      position: relative;
+      transform: scale(0.95) translateY(20px);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .modal-overlay.active .modal-card { 
+      transform: scale(1) translateY(0); 
+    }
+    .modal-header {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: #fff;
+      padding: 30px;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.2);
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-close:hover {
+      background: rgba(255,255,255,0.4);
+      transform: rotate(90deg);
+    }
+    .modal-body { padding: 30px; }
+    .modal-specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 20px 0;
+    }
+    .modal-spec-item {
+      background: var(--bg);
+      border-radius: 12px;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+    }
+    .modal-spec-item .label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .modal-spec-item .value {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 0.95rem;
+    }
+
+    /* ПОДВАЛ И КАРТА */
+    footer {
+      background: var(--primary-dark);
+      color: #fff;
+      padding: 70px 0 30px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 44px;
+      margin-bottom: 40px;
+    }
+    .footer-col h4 {
+      color: var(--accent-bright);
+      font-size: 1.1rem;
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 10px; color: #b5c7bd; font-size: 0.92rem; }
+    .footer-links a { color: #fff; text-decoration: none; }
+    .footer-links a:hover { color: var(--accent-bright); }
+    .map-container {
+      margin-top: 15px;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 160px;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    @media (max-width: 1024px) {
+      .nav-links { display: none; }
+      .hero-grid, .calculator-wrapper, .footer-grid, .lead-form-grid, .catalog-lead-box { grid-template-columns: 1fr; }
+      .lead-btn { grid-column: span 1; }
+      .catalog-lead-form { max-width: 100%; }
+      .hero h1 { font-size: 2.3rem; }
+      .hero-content-box { padding: 24px; }
+      .calculator-wrapper { padding: 32px 20px; }
+      .modal-specs-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ШАПКА -->
+  <header>
+    <div class="container nav-wrap">
+      <a href="#" class="logo">
+        <img src="лого.jpg" alt="Питомник груш №1" />
+        <div class="logo-text">
+          <span class="logo-title">Питомник груш №1</span>
+          <span class="logo-subtitle">Оптовое выращивание саженцев</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about">О питомнике</a></li>
+        <li><a href="#harvest">Наш урожай</a></li>
+        <li><a href="#video">Видеообзор</a></li>
+        <li><a href="#varieties">Сорта и характеристики</a></li>
+        <li><a href="#catalog">Реестр остатков</a></li>
+        <li><a href="#calc">Калькулятор опта</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+
+      <div class="header-contacts">
+        <a href="tel:89185965257" class="phone-card">
+          <span class="header-phone">8 (918) 596-52-57</span>
+          <span class="header-sub">Пн–Вс: 09:00 — 16:00 (МСК)</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content-box">
+          <div class="hero-tag">🌱 Промышленный посадочный материал в КБР</div>
+          <h1>Саженцы груши высшего сорта <span>оптом от производителя</span></h1>
+          
+          <!-- УТП-БАННЕР -->
+          <div class="utp-banner">
+            <p>🛡 <span>Гарантия приживаемости 99%</span>, бесплатное <span>агросопровождение</span> и чистый <span>посадочный материал без болезней</span>.</p>
+          </div>
+
+          <p class="hero-desc">
+            Специализированный питомник в Кабардино-Балкарии. Чистосортные 1-летние и 2-летние саженцы.
+          </p>
+          <div class="hero-btn-row">
+            <a href="#catalog" class="btn shimmer-btn" style="padding: 14px 28px; border-radius: 12px; text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">Смотреть остатки и прайс</a>
+            <button class="btn btn-outline shimmer-btn" type="button" onclick="openOrderModal('Консультация и бронь из шапки')">Заказать звонок</button>
+          </div>
+        </div>
+        <div class="hero-stats-panel">
+          <div class="stat-card">
+            <div class="stat-number">357 436</div>
+            <div class="stat-desc">Саженцев в наличии на складе</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">99%</div>
+            <div class="stat-desc">Подтвержденная приживаемость</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">от 500</div>
+            <div class="stat-desc">Штук — минимальная оптовая партия</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">0 ₽</div>
+            <div class="stat-desc">Консультации главного агронома</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADVANTAGES -->
+  <section class="section-spacing" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Преимущества работы</span>
+        <h2>Почему агропредприятия выбирают наш питомник</h2>
+        <p>Мы знаем о защите и технологиях грушевых садов всё и делимся экспертизой с нашими партнерами</p>
+      </div>
+
+      <div class="advantages-grid">
+        <div class="adv-card">
+          <div class="adv-icon-wrap">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path></svg>
+          </div>
+          <h3>100% Чистый сад без бактериоза</h3>
+          <p>Маточники и саженцы проходят непрерывный фитосанитарный контроль. Отсутствуют бактериальный ожог, монилиоз и вирусные патогены.</p>
+        </div>
+
+        <div class="adv-card">
+          <div class="adv-icon-wrap">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-70.005 18.4l-3.5-3.5m0 0l-3.5 3.5m3.5-3.5V21"></path></svg>
+          </div>
+          <h3>Бесплатное агросопровождение</h3>
+          <p>Главный агроном разрабатывает индивидуальные карты питания, схемы защиты сада и консультирует при посадке.</p>
+        </div>
+
+        <div class="adv-card">
+          <div class="adv-icon-wrap">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"></path></svg>
+          </div>
+          <h3>Холодное хранение 2-леток</h3>
+          <p>Хранение в промышленных холодильных камерах сохраняет тургор корневой системы и гарантирует дружный старт вегетации.</p>
+        </div>
+
+        <div class="adv-card">
+          <div class="adv-icon-wrap">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"></path></svg>
+          </div>
+          <h3>Личный визит в питомник</h3>
+          <p>Приглашаем посетить питомник в КБР и лично оценить чистоту сада и плодоношение перед оплатой.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ВИДЕООБЗОР (RUTUBE) -->
+  <section class="video-section" id="video">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 40px;">
+        <span class="section-badge" style="color: var(--accent-bright);">Видеопрезентация</span>
+        <h2 style="color: #fff;">Обзор саженцев и полей питомника</h2>
+        <p style="color: #b5c7bd;">Посмотрите видеоматериал о состоянии корневой системы и условиях выращивания в КБР</p>
+      </div>
+      <div class="video-wrapper">
+        <iframe src="https://rutube.ru/play/embed/4c58bfa18dbb1454cf2884082746698e" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- БЛОК "НАШ УРОЖАЙ" (БЕЗ КАРТОЧКИ МОЛОДЫХ САЖЕНЦЕВ) -->
+  <section class="section-spacing" id="harvest" style="background: #ffffff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Наша гордость</span>
+        <h2>Наш урожай и стандарты качества</h2>
+        <p>Фотографии отборных плодов, процесса контроля калибра, упаковки саженцев и работы агрономов</p>
+      </div>
+
+      <div class="harvest-grid">
+        <div class="harvest-card">
+          <img src="Готовые саженцы в пучках перед отправкой.jpeg" onerror="this.onerror=null;this.src='Готовые саженцы в пучках перед отправкой.jpg';" alt="Готовые саженцы в пучках перед отправкой">
+          <div class="harvest-info"><span>Готовые саженцы в пучках перед отправкой</span></div>
+        </div>
+        <div class="harvest-card">
+          <img src="Контроль колибра и стандарта плода.jpeg" onerror="this.onerror=null;this.src='Контроль колибра и стандарта плода.jpg';" alt="Контроль калибра и стандарта плода">
+          <div class="harvest-info"><span>Контроль калибра и стандарта плода</span></div>
+        </div>
+        <div class="harvest-card">
+          <img src="Контроль сортовой частоты аграномами.jpeg" onerror="this.onerror=null;this.src='Контроль сортовой частоты аграномами.jpg';" alt="Контроль сортовой чистоты агрономами">
+          <div class="harvest-info"><span>Контроль сортовой чистоты агрономами</span></div>
+        </div>
+        <div class="harvest-card">
+          <img src="Питомник Груш, саженцы.jpeg" onerror="this.onerror=null;this.src='Питомник Груш, саженцы.jpg';" alt="Питомник Груш, саженцы">
+          <div class="harvest-info"><span>Питомник Груш, саженцы</span></div>
+        </div>
+        <div class="harvest-card">
+          <img src="Поля питомника (капильный полив).jpeg" onerror="this.onerror=null;this.src='Поля питомника (капельный полив).jpg';" alt="Поля питомника (капельный полив)">
+          <div class="harvest-info"><span>Поля питомника (капельный полив)</span></div>
+        </div>
+        <div class="harvest-card">
+          <img src="21df5fbb-ece4-4cd0-be4c-80f50055e902.jpg" alt="Плоды груши в саду">
+          <div class="harvest-info"><span>Плоды груши в саду</span></div>
+        </div>
+        <div class="harvest-card">
+          <img src="30B126D4-9B23-4851-81F4-AA4B89404606.jpg" alt="Обильное плодоношение">
+          <div class="harvest-info"><span>Обильное плодоношение</span></div>
+        </div>
+        <div class="harvest-card">
+          <img src="4EDBAB0C-C708-47E0-B34D-1388831EACFC.jpg" alt="Цветение интенсивного сада">
+          <div class="harvest-info"><span>Цветение интенсивного сада</span></div>
+        </div>
+        <div class="harvest-card">
+          <img src="6658e9958240f728504ff3524ff58b03.jpg" alt="Отборные товарные плоды">
+          <div class="harvest-info"><span>Отборные товарные плоды</span></div>
+        </div>
+        <div class="harvest-card">
+          <img src="Img_3491.jpg" alt="Посадочные ряды в питомнике">
+          <div class="harvest-info"><span>Посадочные ряды в питомнике</span></div>
+        </div>
+        <div class="harvest-card">
+          <img src="Img_3576.jpg" alt="Формирование кроны дерева">
+          <div class="harvest-info"><span>Формирование кроны дерева</span></div>
+        </div>
+        <div class="harvest-card">
+          <img src="Img_3758.jpg" alt="Ряды саженцев в грунте">
+          <div class="harvest-info"><span>Ряды саженцев в грунте</span></div>
+        </div>
+        <div class="harvest-card">
+          <img src="Img_3790.jpg" alt="Крупный план спелого плода">
+          <div class="harvest-info"><span>Крупный план спелого плода</span></div>
+        </div>
+        <div class="harvest-card">
+          <img src="Img_3801.jpg" alt="Наливные груши на шпалере">
+          <div class="harvest-info"><span>Наливные груши на шпалере</span></div>
+        </div>
+        <div class="harvest-card">
+          <img src="Img_3855.jpg" alt="Богатый урожай сорта">
+          <div class="harvest-info"><span>Богатый урожай сорта</span></div>
+        </div>
+        <div class="harvest-card">
+          <img src="Img_3905.jpg" alt="Созревание плодов">
+          <div class="harvest-info"><span>Созревание плодов</span></div>
+        </div>
+        <div class="harvest-card">
+          <img src="Img_3952.jpg" alt="Качественные характеристики урожая">
+          <div class="harvest-info"><span>Качественные характеристики урожая</span></div>
+        </div>
+        <div class="harvest-card">
+          <img src="Img_3976.jpg" alt="Премиальное качество груш">
+          <div class="harvest-info"><span>Премиальное качество груш</span></div>
+        </div>
+        <div class="harvest-card">
+          <img src="Img_3977.jpg" alt="Сбор урожая в ящики">
+          <div class="harvest-info"><span>Сбор урожая в ящики</span></div>
+        </div>
+        <div class="harvest-card">
+          <img src="Img_8083.JPG" onerror="this.onerror=null;this.src='Img_8083.jpg';" alt="Штамб и структура саженца">
+          <div class="harvest-info"><span>Штамб и структура саженца</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VARIETIES -->
+  <section class="section-spacing" id="varieties">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Каталог культур</span>
+        <h2>Сорта груши из реестра питомника</h2>
+        <p>Нажмите на карточку любого сорта, чтобы открыть паспорт с характеристиками урожайности, подвоев и сроков созревания</p>
+      </div>
+
+      <div class="varieties-grid">
+        <!-- 1. Ноябрьская Молдавии -->
+        <div class="variety-card">
+          <div class="variety-photo-wrapper">
+            <img src="Ноябрьская Молдавии.jpg" alt="Груша Ноябрьская Молдавии плоды" class="variety-header-photo">
+            <div class="variety-photo-overlay">
+              <span class="variety-pill">Зимний сорт</span>
+              <h3 style="color: #fff; margin: 0; font-size: 1.3rem;">Ноябрьская Молдавии</h3>
+            </div>
+          </div>
+          <div class="variety-body">
+            <p style="color: var(--text-muted); font-size: 0.92rem;">
+              Эталон коммерческого сада. Исключительная лежкость в РГС до мая, десертный маслянистый вкус и масса плода до 350 г.
+            </p>
+            <ul class="variety-quick-specs">
+              <li><span>Съемная зрелость:</span> <strong>Конец сентября - октябрь</strong></li>
+              <li><span>Средний вес плода:</span> <strong>220 – 350 г</strong></li>
+              <li><span>Хранение:</span> <strong>До 6–7 месяцев</strong></li>
+            </ul>
+            <button class="btn-more" type="button" onclick="openModal('noyabr')">📖 Паспорт сорта и агрономика</button>
+          </div>
+        </div>
+
+        <!-- 2. Талгарская красавица -->
+        <div class="variety-card">
+          <div class="variety-photo-wrapper">
+            <img src="Талгарская красавица .jpg" onerror="this.onerror=null;this.src='Талгарская красавица.jpg'" alt="Груша Талгарская красавица плоды" class="variety-header-photo">
+            <div class="variety-photo-overlay">
+              <span class="variety-pill">Осенний сорт</span>
+              <h3 style="color: #fff; margin: 0; font-size: 1.3rem;">Талгарская красавица</h3>
+            </div>
+          </div>
+          <div class="variety-body">
+            <p style="color: var(--text-muted); font-size: 0.92rem;">
+              Высокоурожайный сорт с нарядным карминовым румянцем. Устойчив к грибным заболеваниям и засухе, хрустящая сочная мякоть.
+            </p>
+            <ul class="variety-quick-specs">
+              <li><span>Съемная зрелость:</span> <strong>Конец сентября</strong></li>
+              <li><span>Средний вес плода:</span> <strong>170 – 240 г</strong></li>
+              <li><span>Урожайность:</span> <strong>До 35 т/га</strong></li>
+            </ul>
+            <button class="btn-more" type="button" onclick="openModal('talgar')">📖 Паспорт сорта и агрономика</button>
+          </div>
+        </div>
+
+        <!-- 3. Киргизская зимняя -->
+        <div class="variety-card">
+          <div class="variety-photo-wrapper">
+            <img src="Киргизская зимняя (холод).jpg" alt="Груша Киргизская зимняя плоды" class="variety-header-photo">
+            <div class="variety-photo-overlay">
+              <span class="variety-pill">Позднезимний (холод)</span>
+              <h3 style="color: #fff; margin: 0; font-size: 1.3rem;">Киргизская зимняя</h3>
+            </div>
+          </div>
+          <div class="variety-body">
+            <p style="color: var(--text-muted); font-size: 0.92rem;">
+              Рекордсмен по морозостойкости и транспортабельности. Плотный плод с ярким карминовым румянцем, отличная лежкость.
+            </p>
+            <ul class="variety-quick-specs">
+              <li><span>Съемная зрелость:</span> <strong>Начало октября</strong></li>
+              <li><span>Средний вес плода:</span> <strong>200 – 260 г</strong></li>
+              <li><span>Хранение:</span> <strong>До апреля-мая</strong></li>
+            </ul>
+            <button class="btn-more" type="button" onclick="openModal('kirgiz')">📖 Паспорт сорта и агрономика</button>
+          </div>
+        </div>
+
+        <!-- 4. Конференция -->
+        <div class="variety-card">
+          <div class="variety-photo-wrapper">
+            <img src="Питомник №1.jpg" onerror="this.onerror=null;this.src='Конференция.jpg'" alt="Сочная груша Конференция в саду питомника" class="variety-header-photo">
+            <div class="variety-photo-overlay">
+              <span class="variety-pill">Осенний сорт</span>
+              <h3 style="color: #fff; margin: 0; font-size: 1.3rem;">Конференция</h3>
+            </div>
+          </div>
+          <div class="variety-body">
+            <p style="color: var(--text-muted); font-size: 0.92rem;">
+              Мировой лидер ритейла. Высокая самоплодность, характерная оржавленность кожуры, нежная тающая текстура мякоти.
+            </p>
+            <ul class="variety-quick-specs">
+              <li><span>Съемная зрелость:</span> <strong>Середина сентября</strong></li>
+              <li><span>Средний вес плода:</span> <strong>160 – 220 г</strong></li>
+              <li><span>Урожайность:</span> <strong>Высокая, ежегодная</strong></li>
+            </ul>
+            <button class="btn-more" type="button" onclick="openModal('conf')">📖 Паспорт сорта и агрономика</button>
+          </div>
+        </div>
+
+        <!-- 5. Вильямс -->
+        <div class="variety-card">
+          <div class="variety-photo-wrapper">
+            <img src="Вильямс.jpg" alt="Груша Вильямс плоды" class="variety-header-photo">
+            <div class="variety-photo-overlay">
+              <span class="variety-pill">Раннеосенний</span>
+              <h3 style="color: #fff; margin: 0; font-size: 1.3rem;">Вильямс (Дюшес)</h3>
+            </div>
+          </div>
+          <div class="variety-body">
+            <p style="color: var(--text-muted); font-size: 0.92rem;">
+              Классический эталон мускатного десертного вкуса. Превосходен для свежего премиум-рынка и переработки.
+            </p>
+            <ul class="variety-quick-specs">
+              <li><span>Съемная зрелость:</span> <strong>Конец августа</strong></li>
+              <li><span>Средний вес плода:</span> <strong>170 – 210 г</strong></li>
+              <li><span>Вкус:</span> <strong>Десертный, мускатный (4.9/5)</strong></li>
+            </ul>
+            <button class="btn-more" type="button" onclick="openModal('williams')">📖 Паспорт сорта и агрономика</button>
+          </div>
+        </div>
+
+        <!-- 6. Конкорд -->
+        <div class="variety-card">
+          <div class="variety-photo-wrapper">
+            <img src="Конкорд.jpg" alt="Груша Конкорд плоды" class="variety-header-photo">
+            <div class="variety-photo-overlay">
+              <span class="variety-pill">Зимний сорт</span>
+              <h3 style="color: #fff; margin: 0; font-size: 1.3rem;">Конкорд</h3>
+            </div>
+          </div>
+          <div class="variety-body">
+            <p style="color: var(--text-muted); font-size: 0.92rem;">
+              Сорт интенсивного типа селекции Конференция × Комис. Компактный габитус кроны, адаптированный для механизированной уборки.
+            </p>
+            <ul class="variety-quick-specs">
+              <li><span>Съемная зрелость:</span> <strong>Сентябрь - октябрь</strong></li>
+              <li><span>Средний вес плода:</span> <strong>180 – 240 г</strong></li>
+              <li><span>Тип кроны:</span> <strong>Компактная, интенсивная</strong></li>
+            </ul>
+            <button class="btn-more" type="button" onclick="openModal('concord')">📖 Паспорт сорта и агрономика</button>
+          </div>
+        </div>
+
+        <!-- 7. Бена Дисулье -->
+        <div class="variety-card">
+          <div class="variety-photo-wrapper">
+            <img src="Бена Дисулье.jpg" alt="Груша Бена Дисулье плоды" class="variety-header-photo">
+            <div class="variety-photo-overlay">
+              <span class="variety-pill">Осенний сорт</span>
+              <h3 style="color: #fff; margin: 0; font-size: 1.3rem;">Бена Дисулье</h3>
+            </div>
+          </div>
+          <div class="variety-body">
+            <p style="color: var(--text-muted); font-size: 0.92rem;">
+              Крупноплодный десертный сорт с отличной устойчивостью к возвратным заморозкам и высокой товарностью плодов.
+            </p>
+            <ul class="variety-quick-specs">
+              <li><span>Съемная зрелость:</span> <strong>Сентябрь</strong></li>
+              <li><span>Средний вес плода:</span> <strong>200 – 280 г</strong></li>
+              <li><span>В наличии:</span> <strong>94 шт. (2-летка)</strong></li>
+            </ul>
+            <button class="btn-more" type="button" onclick="openModal('bena')">📖 Паспорт сорта и агрономика</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATALOG TABLE С ЗАГОЛОВКОМ В ОДНУ СТРОКУ -->
+  <section class="section-spacing" id="catalog" style="background: #ffffff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Остатки питомника</span>
+        <h2 style="white-space: nowrap;">Реестр посадочного материала (357 436 шт.)</h2>
+        <p>Данные складских остатков по состоянию на 02.06.2026. Минимальная партия отгрузки — от 500 саженцев</p>
+      </div>
+
+      <div class="table-container">
+        <div class="filter-bar">
+          <div class="tab-group">
+            <button class="tab-btn active" onclick="filterData('all', this)">Все саженцы (357 436 шт.)</button>
+            <button class="tab-btn" onclick="filterData('1yr', this)">1-летки (211 000 шт.)</button>
+            <button class="tab-btn" onclick="filterData('2yr', this)">2-летки (146 436 шт.)</button>
+          </div>
+          <div style="font-size: 0.9rem; font-weight: 700; color: var(--primary);">
+            💰 Оплата: 100% безналичный расчет
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table id="stockTable">
+            <thead>
+              <tr>
+                <th>Возраст</th>
+                <th>Сорт</th>
+                <th>Категория / Хранение</th>
+                <th>В наличии</th>
+                <th>Опт 1 сорт</th>
+                <th>Опт 2 сорт</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 1-ЛЕТКИ -->
+              <tr data-cat="1yr">
+                <td><strong>1-летка</strong></td>
+                <td>Ноябрьская Молдавии</td>
+                <td><span class="badge-tag badge-grade1">1 сорт</span></td>
+                <td><strong>74 500 шт.</strong></td>
+                <td>450 ₽</td>
+                <td>400 ₽</td>
+              </tr>
+              <tr data-cat="1yr">
+                <td><strong>1-летка</strong></td>
+                <td>Талгарская красавица</td>
+                <td><span class="badge-tag badge-grade1">1 сорт</span></td>
+                <td><strong>18 500 шт.</strong></td>
+                <td>450 ₽</td>
+                <td>400 ₽</td>
+              </tr>
+              <tr data-cat="1yr">
+                <td><strong>1-летка</strong></td>
+                <td>Киргизская зимняя</td>
+                <td><span class="badge-tag badge-grade1">1 сорт</span></td>
+                <td><strong>118 000 шт.</strong></td>
+                <td>450 ₽</td>
+                <td>400 ₽</td>
+              </tr>
+
+              <!-- 2-ЛЕТКИ -->
+              <tr data-cat="2yr">
+                <td><strong>2-летка</strong></td>
+                <td>Ноябрьская Молдавии</td>
+                <td><span class="badge-tag badge-grade1">1 сорт</span></td>
+                <td><strong>44 903 шт.</strong></td>
+                <td>570 ₽</td>
+                <td>520 ₽</td>
+              </tr>
+              <tr data-cat="2yr">
+                <td><strong>2-летка</strong></td>
+                <td>Талгарская красавица (холод)</td>
+                <td><span class="badge-tag badge-grade1">1 сорт</span> <span class="badge-tag badge-cold">холод</span></td>
+                <td><strong>61 437 шт.</strong></td>
+                <td>570 ₽</td>
+                <td>520 ₽</td>
+              </tr>
+              <tr data-cat="2yr">
+                <td><strong>2-летка</strong></td>
+                <td>Киргизская зимняя (холод)</td>
+                <td><span class="badge-tag badge-grade1">1 сорт</span> <span class="badge-tag badge-cold">холод</span></td>
+                <td><strong>18 722 шт.</strong></td>
+                <td>570 ₽</td>
+                <td>520 ₽</td>
+              </tr>
+              <tr data-cat="2yr">
+                <td><strong>2-летка</strong></td>
+                <td>Киргизская зимняя (холод)</td>
+                <td><span class="badge-tag badge-grade2">2 сорт</span> <span class="badge-tag badge-cold">холод</span></td>
+                <td><strong>2 450 шт.</strong></td>
+                <td>—</td>
+                <td>520 ₽</td>
+              </tr>
+              <tr data-cat="2yr">
+                <td><strong>2-летка</strong></td>
+                <td>Конференция</td>
+                <td><span class="badge-tag badge-grade1">1 сорт</span></td>
+                <td><strong>15 040 шт.</strong></td>
+                <td>570 ₽</td>
+                <td>520 ₽</td>
+              </tr>
+              <tr data-cat="2yr">
+                <td><strong>2-летка</strong></td>
+                <td>Вильямс</td>
+                <td><span class="badge-tag badge-grade1">1 сорт</span></td>
+                <td><strong>1 470 шт.</strong></td>
+                <td>570 ₽</td>
+                <td>520 ₽</td>
+              </tr>
+              <tr data-cat="2yr">
+                <td><strong>2-летка</strong></td>
+                <td>Конкорд</td>
+                <td><span class="badge-tag badge-grade1">1 сорт</span></td>
+                <td><strong>2 320 шт.</strong></td>
+                <td>570 ₽</td>
+                <td>520 ₽</td>
+              </tr>
+              <tr data-cat="2yr">
+                <td><strong>2-летка</strong></td>
+                <td>Бена Дисулье</td>
+                <td><span class="badge-tag badge-grade1">1 сорт</span></td>
+                <td><strong>94 шт.</strong></td>
+                <td>570 ₽</td>
+                <td>520 ₽</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ФОРМА ОБРАТНОЙ СВЯЗИ В РЕЕСТРЕ -->
+        <div class="catalog-lead-box">
+          <div class="catalog-lead-text">
+            <h4>Нужен определенный объем или сорт?</h4>
+            <p>Оставьте номер телефона, и менеджер подготовит коммерческое предложение под ваш проект сада.</p>
+          </div>
+          <form onsubmit="handleLeadSubmit(event)" class="catalog-lead-form">
+            <input type="tel" class="catalog-input" placeholder="Номер телефона (+7 ...)" required />
+            <button type="submit" class="btn shimmer-btn" style="padding: 12px 24px; cursor: pointer; border-radius: 10px;">Запросить смету</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="calculator-section" id="calc">
+    <div class="container">
+      <div class="calculator-wrapper">
+        <div class="calc-form-container">
+          <span class="calc-header-tag">Калькулятор партии</span>
+          <h2 class="calc-title">Расчет стоимости оптового заказа</h2>
+          <p class="calc-subtitle">
+            Задайте произвольный объем для оптовой отгрузки. Оплата по безналичному расчету.
+          </p>
+
+          <div class="calc-form-group">
+            <label class="calc-label" for="calc-category">Категория и возраст саженцев:</label>
+            <select id="calc-category" class="calc-select" onchange="runCalc()">
+              <option value="450">1-летка (1 сорт) — 450 ₽/шт.</option>
+              <option value="400">1-летка (2 сорт) — 400 ₽/шт.</option>
+              <option value="570" selected>2-летка (1 сорт) — 570 ₽/шт.</option>
+              <option value="520">2-летка (2 сорт) — 520 ₽/шт.</option>
+            </select>
+          </div>
+
+          <div class="calc-form-group">
+            <div class="calc-label">
+              <span>Количество саженцев:</span>
+              <span class="note">Мин. партия: 500 шт.</span>
+            </div>
+            <input type="number" id="calc-amount" class="calc-input-number" value="1000" min="500" step="50" oninput="syncFromInput()" placeholder="Введите количество шт." />
+            <input type="range" id="calc-range" class="calc-range" value="1000" min="500" max="50000" step="100" oninput="syncFromRange()" />
+          </div>
+        </div>
+
+        <div class="calc-summary-card">
+          <div class="calc-val-title">Ориентировочная сумма</div>
+          <div class="calc-price-display" id="calc-sum">570 000 ₽</div>
+          
+          <ul class="calc-features-list">
+            <li>Бесплатные консультации агронома</li>
+            <li>Гарантия сортовой чистоты 100%</li>
+            <li>Безналичный расчет с документами</li>
+            <li>Помощь в организации доставки</li>
+          </ul>
+
+          <button class="btn shimmer-btn" type="button" onclick="openOrderModal('Калькулятор опта')" style="width: 100%; font-size: 1rem; padding: 16px; border-radius: 12px; cursor: pointer;">Забронировать партию</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- БЛОК ФОРМЫ ЗАХВАТА (ОБРАТНЫЙ ЗВОНОК) -->
+  <section class="lead-section">
+    <div class="container">
+      <div class="lead-wrapper">
+        <span class="section-badge" style="color: var(--accent-bright);">Связь с агрономом</span>
+        <h2 style="font-size: 2.2rem; font-family: 'Playfair Display', serif; margin-bottom: 12px;">Получите консультацию и расчет доставки</h2>
+        <p style="color: #cbdad0; margin-bottom: 24px; font-size: 1rem;">Оставьте номер телефона, и наш главный агроном свяжется с вами в течение 15 минут для обсуждения деталей заказа.</p>
+        
+        <form onsubmit="handleLeadSubmit(event)" class="lead-form-grid">
+          <input type="text" class="lead-input" placeholder="Ваше имя" required />
+          <input type="tel" class="lead-input" placeholder="Номер телефона (+7 ...)" required />
+          <button type="submit" class="lead-btn shimmer-btn" style="border-radius: 12px;">Получить консультацию и прайс</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПОДВАЛ И КАРТА -->
+  <footer id="contacts">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="#" class="logo" style="margin-bottom: 16px;">
+            <img src="лого.jpg" alt="Питомник груш №1" />
+            <div class="logo-text">
+              <span class="logo-title" style="color: #fff;">Питомник груш №1</span>
+              <span class="logo-subtitle" style="color: var(--accent-bright);">Оптовое выращивание саженцев</span>
+            </div>
+          </a>
+          <p style="color: #9cb3a6; font-size: 0.92rem; margin-bottom: 15px; line-height: 1.6;">
+            ООО «ВИД». Специализированное производство и оптовая продажа саженцев груши для закладки садов по всей России.
+          </p>
+          <p style="color: #cbdad0; font-size: 0.85rem; margin-bottom: 6px;">
+            📍 <strong>Координаты питомника:</strong> 43.913589, 44.198528
+          </p>
+          <div class="map-container">
+            <iframe src="https://maps.google.com/maps?q=43.913589,44.198528&z=14&output=embed" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Контакты отдела продаж</h4>
+          <ul class="footer-links">
+            <li><strong>Телефон:</strong> <a href="tel:89185965257">8 (918) 596-52-57</a></li>
+            <li><strong>Email:</strong> <a href="mailto:torg@ooovid.com">torg@ooovid.com</a></li>
+            <li><strong>Instagram:</strong> @pear_grove</li>
+            <li><strong>Режим работы:</strong> Пн–Вс с 09:00 до 16:00 (МСК)</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Условия и логистика</h4>
+          <ul class="footer-links">
+            <li><strong>Локация:</strong> КБР, Прохладненский район, с. Восточное</li>
+            <li><strong>Условия оплаты:</strong> Только 100% безналичный расчет</li>
+            <li><strong>Минимальная партия:</strong> От 500 саженцев</li>
+            <li><strong>Доставка:</strong> Самовывоз или содействие в логистике</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; text-align: center; color: #738b7e; font-size: 0.85rem;">
+        © 2026 Питомник груш №1 (ООО «ВИД»). Все права защищены.
+      </div>
+    </div>
+  </footer>
+
+  <!-- МОДАЛЬНОЕ ОКНО ЗАЯВКИ -->
+  <div class="modal-overlay" id="orderModal" onclick="closeOrderModal(event)">
+    <div class="modal-card" style="max-width: 500px;" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <button class="modal-close" type="button" onclick="closeOrderModalDirect()" aria-label="Закрыть">✕</button>
+        <span style="color: var(--accent-bright); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Быстрый заказ</span>
+        <h2 style="font-size: 1.8rem; margin-top: 4px;" id="modalSourceTitle">Бронирование партии</h2>
+      </div>
+      <div class="modal-body">
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">Заполните форму, и мы свяжемся с вами для оформления договора и уточнения деталей отгрузки.</p>
+        <form onsubmit="handleModalSubmit(event)" style="display: flex; flex-direction: column; gap: 16px;">
+          <input type="text" class="lead-input" style="background: #f5f8f5; color: var(--text); border-color: var(--border);" placeholder="Ваше имя" required />
+          <input type="tel" class="lead-input" style="background: #f5f8f5; color: var(--text); border-color: var(--border);" placeholder="Номер телефона (+7 ...)" required />
+          <button type="submit" class="btn shimmer-btn" style="width: 100%; padding: 16px; font-size: 1rem; cursor: pointer; border-radius: 12px;">Отправить заявку</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- МОДАЛЬНОЕ ОКНО ПАСПОРТОВ -->
+  <div class="modal-overlay" id="varietyModal" onclick="closeModal(event)">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <button class="modal-close" type="button" onclick="closeModalDirect()" aria-label="Закрыть">✕</button>
+        <span style="color: var(--accent-bright); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;" id="mBadge">Паспорт сорта</span>
+        <h2 style="font-size: 2rem; margin-top: 4px;" id="mTitle">Название сорта</h2>
+      </div>
+      <div class="modal-body">
+        <p id="mDesc" style="color: var(--text); font-size: 1rem; line-height: 1.65; margin-bottom: 20px;"></p>
+        <h4 style="color: var(--primary); font-size: 1.1rem; border-bottom: 2px solid #eef3f0; padding-bottom: 8px;">Агрономические характеристики</h4>
+        <div class="modal-specs-grid">
+          <div class="modal-spec-item">
+            <div class="label">Сроки созревания / Съем</div>
+            <div class="value" id="mRipening">—</div>
+          </div>
+          <div class="modal-spec-item">
+            <div class="label">Рекомендуемые подвои</div>
+            <div class="value" id="mRootstock">—</div>
+          </div>
+          <div class="modal-spec-item">
+            <div class="label">Урожайность в саду</div>
+            <div class="value" id="mYield">—</div>
+          </div>
+          <div class="modal-spec-item">
+            <div class="label">Лежкость и хранение</div>
+            <div class="value" id="mStorage">—</div>
+          </div>
+          <div class="modal-spec-item">
+            <div class="label">Масса и форма плода</div>
+            <div class="value" id="mWeight">—</div>
+          </div>
+          <div class="modal-spec-item">
+            <div class="label">Устойчивость к болезням</div>
+            <div class="value" id="mImmunity">—</div>
+          </div>
+        </div>
+
+        <div style="background: #f4f8f5; border-radius: 12px; padding: 18px; border-left: 4px solid var(--primary); margin-top: 20px;">
+          <h5 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 6px;">Рекомендация агронома питомника:</h5>
+          <p id="mTip" style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;"></p>
+        </div>
+
+        <div style="margin-top: 28px; display: flex; gap: 12px;">
+          <button type="button" onclick="closeModalDirect(); openOrderModal('Паспорт сорта');" class="btn btn-secondary" style="flex: 1; cursor: pointer; border-radius: 12px;">Забронировать этот сорт</button>
+          <a href="tel:89185965257" class="btn shimmer-btn" style="flex: 1; text-decoration: none; display: flex; align-items: center; justify-content: center; border-radius: 12px;">Позвонить агроному</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openOrderModal(source) {
+      const modal = document.getElementById('orderModal');
+      const title = document.getElementById('modalSourceTitle');
+      if (title) title.innerText = "Заявка: " + source;
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeOrderModalDirect() {
+      const modal = document.getElementById('orderModal');
+      if (modal) modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function closeOrderModal(e) {
+      if (e.target && e.target.id === 'orderModal') {
+        closeOrderModalDirect();
+      }
+    }
+
+    function handleLeadSubmit(e) {
+      e.preventDefault();
+      alert('Спасибо! Ваша заявка успешно отправлена. Главный агроном свяжется с вами в течение 15 минут.');
+      e.target.reset();
+    }
+
+    function handleModalSubmit(e) {
+      e.preventDefault();
+      alert('Спасибо! Запрос принят. Отдел продаж свяжется с вами для оформления безналичного расчета.');
+      closeOrderModalDirect();
+      e.target.reset();
+    }
+
+    const varietyData = {
+      noyabr: {
+        badge: "Зимний эталон рынка",
+        title: "Ноябрьская Молдавии (Ксения)",
+        desc: "Ведущий коммерческий сорт зимнего срока потребления. Демонстрирует идеальный баланс сахаристости и сочности, превосходно держится на ветвях до съема и пользуется высоким спросом у торговых сетей.",
+        ripening: "Конец сентября – середина октября",
+        rootstock: "Айва BA-29, Айва S1, Лесная груша",
+        yield: "35 – 45 т/га (при схеме 3.5×1.0 м)",
+        storage: "До мая-июня (в РГС / холоде)",
+        weight: "220 – 350 г (отдельные до 450 г)",
+        immunity: "Высокая к парше и бактериозу",
+        tip: "Идеален для интенсивных насаждений со шпалерно-карликовой системой. В наличии 119 403 шт. (1- и 2-летки)."
+      },
+      talgar: {
+        badge: "Осенний высокотоварный сорт",
+        title: "Талгарская красавица",
+        desc: "Сорт отличается неприхотливостью к почвенно-климатическим условиям, высокой засухоустойчивостью и нарядным удлиненно-бутылочным внешним видом с ярким точечным румянцем.",
+        ripening: "2-я половина сентября",
+        rootstock: "Айва BA-29, Дикая лесная груша",
+        yield: "30 – 38 т/га с 4-5 года вегетации",
+        storage: "До 3–4 месяцев при t +1...+2°C",
+        weight: "170 – 240 г",
+        immunity: "Иммунитет к грибным заболеваниям",
+        tip: "Сорт быстро вступает в плодоношение. В наличии на складе 2-летки холодного хранения (61 437 шт.)."
+      },
+      kirgiz: {
+        badge: "Позднезимний морозостойкий сорт",
+        title: "Киргизская зимняя",
+        desc: "Специализированный поздний сорт с исключительной транспортабельностью на дальние расстояния. Плоды одномерные, яйцевидные, с насыщенным карминово-красным румянцем.",
+        ripening: "1-я декада октября (съемная)",
+        rootstock: "Айва BA-29, Сеянцы груши кавказской",
+        yield: "30 – 40 т/га",
+        storage: "До апреля-мая без потери плотности",
+        weight: "200 – 260 г",
+        immunity: "Абсолютная устойчивость к термическим ожогам и парше",
+        tip: "Один из самых надежных сортов для регионов с резкими температурными колебаниями. В наличии более 139 000 саженцев."
+      },
+      conf: {
+        badge: "Мировой лидер продаж",
+        title: "Конференция",
+        desc: "Классический сорт, лидер ритейла. Обладает вытянутой бутылочной формой, характерной золотистой оржавленностью и нежнейшей тающей маслянистой мякотью.",
+        ripening: "Середина – конец сентября",
+        rootstock: "Айва BA-29, Айва MC",
+        yield: "35 – 50 т/га в суперинтенсивных садах",
+        storage: "До 5–6 месяцев в камерах",
+        weight: "160 – 220 г",
+        immunity: "Средняя (требует базовой фунгицидной защиты)",
+        tip: "Рекомендуется закладка на капельном поливе и шпалере. Доступно 15 040 шт. двухлетних саженцев 1-го сорта."
+      },
+      williams: {
+        badge: "Десертный эталон",
+        title: "Вильямс (Дюшес)",
+        desc: "Золотой эталон вкусовых качеств. Сочная мякоть с мускатным ароматом и тающей консистенцией для премиального свежего рынка и переработки.",
+        ripening: "Конец августа – начало сентября",
+        rootstock: "Айва BA-29 (с вставкой), Сеянец груши",
+        yield: "25 – 32 т/га",
+        storage: "До 45–60 дней",
+        weight: "170 – 210 г",
+        immunity: "Высокая устойчивость к тле и медянице",
+        tip: "Отличный сорт для получения выручки в начале осеннего сезона продаж. В наличии 1 470 шт."
+      },
+      concord: {
+        badge: "Интенсивная селекция",
+        title: "Конкорд",
+        desc: "Сорт интенсивного типа селекции Конференция × Комис. Компактный габитус кроны, адаптированный для механизированной уборки.",
+        ripening: "Сентябрь - октябрь",
+        rootstock: "Айва BA-29, Айва Сидо",
+        yield: "30 – 42 т/га",
+        storage: "4 – 5 месяцев",
+        weight: "180 – 240 г",
+        immunity: "Повышенная устойчивость к болезням",
+        tip: "Рекомендуется для современных плотных посадок. В наличии 2 320 шт."
+      },
+      bena: {
+        badge: "Крупноплодный сорт",
+        title: "Бена Дисулье",
+        desc: "Ценный сорт с крупными одномерными плодами десертного назначения и гармоничным вкусом.",
+        ripening: "Сентябрь",
+        rootstock: "Айва BA-29",
+        yield: "28 – 35 т/га",
+        storage: "3 – 4 месяца",
+        weight: "200 – 280 г",
+        immunity: "Устойчив к основным патогенам",
+        tip: "Ограниченная партия на складе — 94 шт. двухлеток 1-го сорта."
+      }
+    };
+
+    function openModal(key) {
+      const data = varietyData[key];
+      if (!data) return;
+
+      const modal = document.getElementById('varietyModal');
+      if (!modal) return;
+
+      const setVal = (id, val) => {
+        const el = document.getElementById(id);
+        if (el) el.innerText = val || '—';
+      };
+
+      setVal('mBadge', data.badge);
+      setVal('mTitle', data.title);
+      setVal('mDesc', data.desc);
+      setVal('mRipening', data.ripening);
+      setVal('mRootstock', data.rootstock);
+      setVal('mYield', data.yield);
+      setVal('mStorage', data.storage);
+      setVal('mWeight', data.weight);
+      setVal('mImmunity', data.immunity);
+      setVal('mTip', data.tip);
+
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModalDirect() {
+      const modal = document.getElementById('varietyModal');
+      if (modal) {
+        modal.classList.remove('active');
+      }
+      document.body.style.overflow = '';
+    }
+
+    function closeModal(e) {
+      if (e.target && e.target.id === 'varietyModal') {
+        closeModalDirect();
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeModalDirect();
+        closeOrderModalDirect();
+      }
+    });
+
+    function filterData(cat, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const rows = document.querySelectorAll('#stockTable tbody tr');
+      rows.forEach(r => {
+        if (cat === 'all' || r.dataset.cat === cat) {
+          r.style.display = '';
+        } else {
+          r.style.display = 'none';
+        }
+      });
+    }
+
+    function syncFromInput() {
+      const input = document.getElementById('calc-amount');
+      const range = document.getElementById('calc-range');
+      let val = parseInt(input.value) || 0;
+      if (val >= 500 && val <= 50000) {
+        range.value = val;
+      }
+      runCalc();
+    }
+
+    function syncFromRange() {
+      const input = document.getElementById('calc-amount');
+      const range = document.getElementById('calc-range');
+      input.value = range.value;
+      runCalc();
+    }
+
+    function runCalc() {
+      const price = parseFloat(document.getElementById('calc-category').value) || 0;
+      let qty = parseInt(document.getElementById('calc-amount').value) || 0;
+      if (qty < 0) qty = 0;
+      const total = price * qty;
+      document.getElementById('calc-sum').innerText = total.toLocaleString('ru-RU') + ' ₽';
+    }
+  </script>
+</body>
+</html>
