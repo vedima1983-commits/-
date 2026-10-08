@@ -203,7 +203,6 @@
       font-weight: 600;
     }
 
-    /* Адаптивность шапки для экранов меньше 1400px (включая ноутбуки и планшеты) */
     @media (max-width: 1400px) {
       .mobile-menu-btn { display: block; }
       .nav-links {
@@ -325,7 +324,6 @@
       font-style: italic;
     }
 
-    /* УТП ОФФЕР БЛОК */
     .utp-banner {
       background: linear-gradient(135deg, #09170f 0%, #122b1c 100%);
       color: #fff;
@@ -1032,6 +1030,7 @@
       border: none;
     }
 
+    /* МОБИЛЬНАЯ АДАПТАЦИЯ ПРОБЛЕМНЫХ БЛОКОВ */
     @media (max-width: 1400px) {
       .mobile-menu-btn { display: block; }
       .nav-links {
@@ -1053,14 +1052,32 @@
       .nav-links a { width: 100%; justify-content: flex-start; padding: 12px 16px; font-size: 0.95rem; }
     }
 
-    @media (max-width: 1024px) {
-      .hero-grid, .calculator-wrapper, .footer-grid, .lead-form-grid, .catalog-lead-box { grid-template-columns: 1fr; }
-      .lead-btn { grid-column: span 1; }
-      .catalog-lead-form { max-width: 100%; }
-      .hero h1 { font-size: 2.3rem; }
-      .hero-content-box { padding: 24px; }
-      .calculator-wrapper { padding: 32px 20px; }
-      .modal-specs-grid { grid-template-columns: 1fr; }
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 14px;
+      }
+      .catalog-lead-box {
+        flex-direction: column;
+        padding: 24px 16px;
+        align-items: stretch;
+      }
+      .catalog-lead-form {
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+      }
+      .catalog-input {
+        width: 100%;
+      }
+      .hero-grid, .calculator-wrapper, .footer-grid, .lead-form-grid {
+        grid-template-columns: 1fr;
+      }
+      .lead-wrapper {
+        padding: 24px 16px;
+      }
+      .calculator-wrapper {
+        padding: 24px 16px;
+      }
     }
   </style>
 </head>
@@ -1106,7 +1123,6 @@
           <div class="hero-tag">🌱 Промышленный посадочный материал в КБР</div>
           <h1>Саженцы груши высшего сорта <span>оптом от производителя</span></h1>
           
-          <!-- УТП-БАННЕР -->
           <div class="utp-banner">
             <p>🛡 <span>Гарантия приживаемости 99%</span>, бесплатное <span>агросопровождение</span> и чистый <span>посадочный материал без болезней</span>.</p>
           </div>
