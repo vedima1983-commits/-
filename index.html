@@ -9,15 +9,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     /* Исправление горизонтального скролла на мобильных */
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
 
-img, iframe, video {
-  max-width: 100%;
-  height: auto;
-}
+    img, iframe, video {
+      max-width: 100%;
+      height: auto;
+    }
+
     :root {
       --primary: #122b1c;
       --primary-light: #1f472f;
@@ -95,6 +96,7 @@ img, iframe, video {
       align-items: center;
       padding: 10px 0;
       gap: 20px;
+      position: relative;
     }
 
     .logo {
@@ -157,6 +159,16 @@ img, iframe, video {
       box-shadow: 0 2px 8px rgba(21, 128, 61, 0.08);
     }
 
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: var(--primary);
+      padding: 4px;
+    }
+
     .header-contacts {
       display: flex;
       align-items: center;
@@ -189,6 +201,28 @@ img, iframe, video {
       font-size: 0.72rem;
       color: var(--text-muted);
       font-weight: 600;
+    }
+
+    /* Адаптивность для шапки (показ гамбургера на экранах меньше 1200px) */
+    @media (max-width: 1200px) {
+      .mobile-menu-btn { display: block; }
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 16px;
+        box-shadow: var(--shadow-lg);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        border: 1px solid var(--border);
+        z-index: 1001;
+      }
+      .nav-links.active { display: flex; }
+      .nav-links a { width: 100%; justify-content: flex-start; padding: 12px 16px; font-size: 0.95rem; }
     }
 
     /* КНОПКИ */
@@ -620,7 +654,7 @@ img, iframe, video {
       flex-wrap: wrap;
       gap: 16px;
     }
-    .tab-group { display: flex; gap: 8px; }
+    .tab-group { display: flex; gap: 8px; flex-wrap: wrap; }
     .tab-btn {
       padding: 10px 18px;
       border-radius: var(--radius-md);
@@ -998,8 +1032,28 @@ img, iframe, video {
       border: none;
     }
 
+    @media (max-width: 1200px) {
+      .mobile-menu-btn { display: block; }
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 16px;
+        box-shadow: var(--shadow-lg);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        border: 1px solid var(--border);
+        z-index: 1001;
+      }
+      .nav-links.active { display: flex; }
+      .nav-links a { width: 100%; justify-content: flex-start; padding: 12px 16px; font-size: 0.95rem; }
+    }
+
     @media (max-width: 1024px) {
-      .nav-links { display: none; }
       .hero-grid, .calculator-wrapper, .footer-grid, .lead-form-grid, .catalog-lead-box { grid-template-columns: 1fr; }
       .lead-btn { grid-column: span 1; }
       .catalog-lead-form { max-width: 100%; }
@@ -1023,14 +1077,16 @@ img, iframe, video {
         </div>
       </a>
 
+      <button class="mobile-menu-btn" type="button" onclick="toggleMobileMenu()" aria-label="Меню">☰</button>
+
       <ul class="nav-links">
-        <li><a href="#about">О питомнике</a></li>
-        <li><a href="#harvest">Наш урожай</a></li>
-        <li><a href="#video">Видеообзор</a></li>
-        <li><a href="#varieties">Сорта и характеристики</a></li>
-        <li><a href="#catalog">Реестр остатков</a></li>
-        <li><a href="#calc">Калькулятор опта</a></li>
-        <li><a href="#contacts">Контакты</a></li>
+        <li><a href="#about" onclick="closeMobileMenu()">О питомнике</a></li>
+        <li><a href="#harvest" onclick="closeMobileMenu()">Наш урожай</a></li>
+        <li><a href="#video" onclick="closeMobileMenu()">Видеообзор</a></li>
+        <li><a href="#varieties" onclick="closeMobileMenu()">Сорта и характеристики</a></li>
+        <li><a href="#catalog" onclick="closeMobileMenu()">Реестр остатков</a></li>
+        <li><a href="#calc" onclick="closeMobileMenu()">Калькулятор опта</a></li>
+        <li><a href="#contacts" onclick="closeMobileMenu()">Контакты</a></li>
       </ul>
 
       <div class="header-contacts">
@@ -1144,7 +1200,7 @@ img, iframe, video {
     </div>
   </section>
 
-  <!-- БЛОК "НАШ УРОЖАЙ" (БЕЗ КАРТОЧКИ МОЛОДЫХ САЖЕНЦЕВ) -->
+  <!-- БЛОК "НАШ УРОЖАЙ" -->
   <section class="section-spacing" id="harvest" style="background: #ffffff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
     <div class="container">
       <div class="section-header">
@@ -1159,11 +1215,11 @@ img, iframe, video {
           <div class="harvest-info"><span>Готовые саженцы в пучках перед отправкой</span></div>
         </div>
         <div class="harvest-card">
-          <img src="Контроль колибра и стандарта плода.jpeg" onerror="this.onerror=null;this.src='Контроль колибра и стандарта плода.jpg';" alt="Контроль калибра и стандарта плода">
+          <img src="Контроль колибра и стандарта плода.jpeg" onerror="this.onerror=null;this.src='Контроль калибра и стандарта плода.jpg';" alt="Контроль калибра и стандарта плода">
           <div class="harvest-info"><span>Контроль калибра и стандарта плода</span></div>
         </div>
         <div class="harvest-card">
-          <img src="Контроль сортовой частоты аграномами.jpeg" onerror="this.onerror=null;this.src='Контроль сортовой частоты аграномами.jpg';" alt="Контроль сортовой чистоты агрономами">
+          <img src="Контроль сортовой частоты аграномами.jpeg" onerror="this.onerror=null;this.src='Контроль сортовой чистоты агрономами.jpg';" alt="Контроль сортовой чистоты агрономами">
           <div class="harvest-info"><span>Контроль сортовой чистоты агрономами</span></div>
         </div>
         <div class="harvest-card">
@@ -1248,7 +1304,6 @@ img, iframe, video {
       </div>
 
       <div class="varieties-grid">
-        <!-- 1. Ноябрьская Молдавии -->
         <div class="variety-card">
           <div class="variety-photo-wrapper">
             <img src="Ноябрьская Молдавии.jpg" alt="Груша Ноябрьская Молдавии плоды" class="variety-header-photo">
@@ -1270,7 +1325,6 @@ img, iframe, video {
           </div>
         </div>
 
-        <!-- 2. Талгарская красавица -->
         <div class="variety-card">
           <div class="variety-photo-wrapper">
             <img src="Талгарская красавица .jpg" onerror="this.onerror=null;this.src='Талгарская красавица.jpg'" alt="Груша Талгарская красавица плоды" class="variety-header-photo">
@@ -1292,7 +1346,6 @@ img, iframe, video {
           </div>
         </div>
 
-        <!-- 3. Киргизская зимняя -->
         <div class="variety-card">
           <div class="variety-photo-wrapper">
             <img src="Киргизская зимняя (холод).jpg" alt="Груша Киргизская зимняя плоды" class="variety-header-photo">
@@ -1314,7 +1367,6 @@ img, iframe, video {
           </div>
         </div>
 
-        <!-- 4. Конференция -->
         <div class="variety-card">
           <div class="variety-photo-wrapper">
             <img src="Питомник №1.jpg" onerror="this.onerror=null;this.src='Конференция.jpg'" alt="Сочная груша Конференция в саду питомника" class="variety-header-photo">
@@ -1336,7 +1388,6 @@ img, iframe, video {
           </div>
         </div>
 
-        <!-- 5. Вильямс -->
         <div class="variety-card">
           <div class="variety-photo-wrapper">
             <img src="Вильямс.jpg" alt="Груша Вильямс плоды" class="variety-header-photo">
@@ -1358,7 +1409,6 @@ img, iframe, video {
           </div>
         </div>
 
-        <!-- 6. Конкорд -->
         <div class="variety-card">
           <div class="variety-photo-wrapper">
             <img src="Конкорд.jpg" alt="Груша Конкорд плоды" class="variety-header-photo">
@@ -1380,7 +1430,6 @@ img, iframe, video {
           </div>
         </div>
 
-        <!-- 7. Бена Дисулье -->
         <div class="variety-card">
           <div class="variety-photo-wrapper">
             <img src="Бена Дисулье.jpg" alt="Груша Бена Дисулье плоды" class="variety-header-photo">
@@ -1405,7 +1454,7 @@ img, iframe, video {
     </div>
   </section>
 
-  <!-- CATALOG TABLE С ЗАГОЛОВКОМ В ОДНУ СТРОКУ -->
+  <!-- CATALOG TABLE -->
   <section class="section-spacing" id="catalog" style="background: #ffffff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
     <div class="container">
       <div class="section-header">
@@ -1439,7 +1488,6 @@ img, iframe, video {
               </tr>
             </thead>
             <tbody>
-              <!-- 1-ЛЕТКИ -->
               <tr data-cat="1yr">
                 <td><strong>1-летка</strong></td>
                 <td>Ноябрьская Молдавии</td>
@@ -1464,8 +1512,6 @@ img, iframe, video {
                 <td>450 ₽</td>
                 <td>400 ₽</td>
               </tr>
-
-              <!-- 2-ЛЕТКИ -->
               <tr data-cat="2yr">
                 <td><strong>2-летка</strong></td>
                 <td>Ноябрьская Молдавии</td>
@@ -1534,7 +1580,6 @@ img, iframe, video {
           </table>
         </div>
 
-        <!-- ФОРМА ОБРАТНОЙ СВЯЗИ В РЕЕСТРЕ -->
         <div class="catalog-lead-box">
           <div class="catalog-lead-text">
             <h4>Нужен определенный объем или сорт?</h4>
@@ -1597,7 +1642,7 @@ img, iframe, video {
     </div>
   </section>
 
-  <!-- БЛОК ФОРМЫ ЗАХВАТА (ОБРАТНЫЙ ЗВОНОК) -->
+  <!-- LEAD SECTION -->
   <section class="lead-section">
     <div class="container">
       <div class="lead-wrapper">
@@ -1607,342 +1652,4 @@ img, iframe, video {
         
         <form onsubmit="handleLeadSubmit(event)" class="lead-form-grid">
           <input type="text" class="lead-input" placeholder="Ваше имя" required />
-          <input type="tel" class="lead-input" placeholder="Номер телефона (+7 ...)" required />
-          <button type="submit" class="lead-btn shimmer-btn" style="border-radius: 12px;">Получить консультацию и прайс</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- ПОДВАЛ И КАРТА -->
-  <footer id="contacts">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <a href="#" class="logo" style="margin-bottom: 16px;">
-            <img src="лого.jpg" alt="Питомник груш №1" />
-            <div class="logo-text">
-              <span class="logo-title" style="color: #fff;">Питомник груш №1</span>
-              <span class="logo-subtitle" style="color: var(--accent-bright);">Оптовое выращивание саженцев</span>
-            </div>
-          </a>
-          <p style="color: #9cb3a6; font-size: 0.92rem; margin-bottom: 15px; line-height: 1.6;">
-            ООО «ВИД». Специализированное производство и оптовая продажа саженцев груши для закладки садов по всей России.
-          </p>
-          <p style="color: #cbdad0; font-size: 0.85rem; margin-bottom: 6px;">
-            📍 <strong>Координаты питомника:</strong> 43.913589, 44.198528
-          </p>
-          <div class="map-container">
-            <iframe src="https://maps.google.com/maps?q=43.913589,44.198528&z=14&output=embed" allowfullscreen="" loading="lazy"></iframe>
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <h4>Контакты отдела продаж</h4>
-          <ul class="footer-links">
-            <li><strong>Телефон:</strong> <a href="tel:89185965257">8 (918) 596-52-57</a></li>
-            <li><strong>Email:</strong> <a href="mailto:torg@ooovid.com">torg@ooovid.com</a></li>
-            <li><strong>Instagram:</strong> @pear_grove</li>
-            <li><strong>Режим работы:</strong> Пн–Вс с 09:00 до 16:00 (МСК)</li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Условия и логистика</h4>
-          <ul class="footer-links">
-            <li><strong>Локация:</strong> КБР, Прохладненский район, с. Восточное</li>
-            <li><strong>Условия оплаты:</strong> Только 100% безналичный расчет</li>
-            <li><strong>Минимальная партия:</strong> От 500 саженцев</li>
-            <li><strong>Доставка:</strong> Самовывоз или содействие в логистике</li>
-          </ul>
-        </div>
-      </div>
-
-      <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; text-align: center; color: #738b7e; font-size: 0.85rem;">
-        © 2026 Питомник груш №1 (ООО «ВИД»). Все права защищены.
-      </div>
-    </div>
-  </footer>
-
-  <!-- МОДАЛЬНОЕ ОКНО ЗАЯВКИ -->
-  <div class="modal-overlay" id="orderModal" onclick="closeOrderModal(event)">
-    <div class="modal-card" style="max-width: 500px;" onclick="event.stopPropagation()">
-      <div class="modal-header">
-        <button class="modal-close" type="button" onclick="closeOrderModalDirect()" aria-label="Закрыть">✕</button>
-        <span style="color: var(--accent-bright); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Быстрый заказ</span>
-        <h2 style="font-size: 1.8rem; margin-top: 4px;" id="modalSourceTitle">Бронирование партии</h2>
-      </div>
-      <div class="modal-body">
-        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">Заполните форму, и мы свяжемся с вами для оформления договора и уточнения деталей отгрузки.</p>
-        <form onsubmit="handleModalSubmit(event)" style="display: flex; flex-direction: column; gap: 16px;">
-          <input type="text" class="lead-input" style="background: #f5f8f5; color: var(--text); border-color: var(--border);" placeholder="Ваше имя" required />
-          <input type="tel" class="lead-input" style="background: #f5f8f5; color: var(--text); border-color: var(--border);" placeholder="Номер телефона (+7 ...)" required />
-          <button type="submit" class="btn shimmer-btn" style="width: 100%; padding: 16px; font-size: 1rem; cursor: pointer; border-radius: 12px;">Отправить заявку</button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- МОДАЛЬНОЕ ОКНО ПАСПОРТОВ -->
-  <div class="modal-overlay" id="varietyModal" onclick="closeModal(event)">
-    <div class="modal-card" onclick="event.stopPropagation()">
-      <div class="modal-header">
-        <button class="modal-close" type="button" onclick="closeModalDirect()" aria-label="Закрыть">✕</button>
-        <span style="color: var(--accent-bright); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;" id="mBadge">Паспорт сорта</span>
-        <h2 style="font-size: 2rem; margin-top: 4px;" id="mTitle">Название сорта</h2>
-      </div>
-      <div class="modal-body">
-        <p id="mDesc" style="color: var(--text); font-size: 1rem; line-height: 1.65; margin-bottom: 20px;"></p>
-        <h4 style="color: var(--primary); font-size: 1.1rem; border-bottom: 2px solid #eef3f0; padding-bottom: 8px;">Агрономические характеристики</h4>
-        <div class="modal-specs-grid">
-          <div class="modal-spec-item">
-            <div class="label">Сроки созревания / Съем</div>
-            <div class="value" id="mRipening">—</div>
-          </div>
-          <div class="modal-spec-item">
-            <div class="label">Рекомендуемые подвои</div>
-            <div class="value" id="mRootstock">—</div>
-          </div>
-          <div class="modal-spec-item">
-            <div class="label">Урожайность в саду</div>
-            <div class="value" id="mYield">—</div>
-          </div>
-          <div class="modal-spec-item">
-            <div class="label">Лежкость и хранение</div>
-            <div class="value" id="mStorage">—</div>
-          </div>
-          <div class="modal-spec-item">
-            <div class="label">Масса и форма плода</div>
-            <div class="value" id="mWeight">—</div>
-          </div>
-          <div class="modal-spec-item">
-            <div class="label">Устойчивость к болезням</div>
-            <div class="value" id="mImmunity">—</div>
-          </div>
-        </div>
-
-        <div style="background: #f4f8f5; border-radius: 12px; padding: 18px; border-left: 4px solid var(--primary); margin-top: 20px;">
-          <h5 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 6px;">Рекомендация агронома питомника:</h5>
-          <p id="mTip" style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;"></p>
-        </div>
-
-        <div style="margin-top: 28px; display: flex; gap: 12px;">
-          <button type="button" onclick="closeModalDirect(); openOrderModal('Паспорт сорта');" class="btn btn-secondary" style="flex: 1; cursor: pointer; border-radius: 12px;">Забронировать этот сорт</button>
-          <a href="tel:89185965257" class="btn shimmer-btn" style="flex: 1; text-decoration: none; display: flex; align-items: center; justify-content: center; border-radius: 12px;">Позвонить агроному</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    function openOrderModal(source) {
-      const modal = document.getElementById('orderModal');
-      const title = document.getElementById('modalSourceTitle');
-      if (title) title.innerText = "Заявка: " + source;
-      if (modal) {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
-    }
-
-    function closeOrderModalDirect() {
-      const modal = document.getElementById('orderModal');
-      if (modal) modal.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    function closeOrderModal(e) {
-      if (e.target && e.target.id === 'orderModal') {
-        closeOrderModalDirect();
-      }
-    }
-
-    function handleLeadSubmit(e) {
-      e.preventDefault();
-      alert('Спасибо! Ваша заявка успешно отправлена. Главный агроном свяжется с вами в течение 15 минут.');
-      e.target.reset();
-    }
-
-    function handleModalSubmit(e) {
-      e.preventDefault();
-      alert('Спасибо! Запрос принят. Отдел продаж свяжется с вами для оформления безналичного расчета.');
-      closeOrderModalDirect();
-      e.target.reset();
-    }
-
-    const varietyData = {
-      noyabr: {
-        badge: "Зимний эталон рынка",
-        title: "Ноябрьская Молдавии (Ксения)",
-        desc: "Ведущий коммерческий сорт зимнего срока потребления. Демонстрирует идеальный баланс сахаристости и сочности, превосходно держится на ветвях до съема и пользуется высоким спросом у торговых сетей.",
-        ripening: "Конец сентября – середина октября",
-        rootstock: "Айва BA-29, Айва S1, Лесная груша",
-        yield: "35 – 45 т/га (при схеме 3.5×1.0 м)",
-        storage: "До мая-июня (в РГС / холоде)",
-        weight: "220 – 350 г (отдельные до 450 г)",
-        immunity: "Высокая к парше и бактериозу",
-        tip: "Идеален для интенсивных насаждений со шпалерно-карликовой системой. В наличии 119 403 шт. (1- и 2-летки)."
-      },
-      talgar: {
-        badge: "Осенний высокотоварный сорт",
-        title: "Талгарская красавица",
-        desc: "Сорт отличается неприхотливостью к почвенно-климатическим условиям, высокой засухоустойчивостью и нарядным удлиненно-бутылочным внешним видом с ярким точечным румянцем.",
-        ripening: "2-я половина сентября",
-        rootstock: "Айва BA-29, Дикая лесная груша",
-        yield: "30 – 38 т/га с 4-5 года вегетации",
-        storage: "До 3–4 месяцев при t +1...+2°C",
-        weight: "170 – 240 г",
-        immunity: "Иммунитет к грибным заболеваниям",
-        tip: "Сорт быстро вступает в плодоношение. В наличии на складе 2-летки холодного хранения (61 437 шт.)."
-      },
-      kirgiz: {
-        badge: "Позднезимний морозостойкий сорт",
-        title: "Киргизская зимняя",
-        desc: "Специализированный поздний сорт с исключительной транспортабельностью на дальние расстояния. Плоды одномерные, яйцевидные, с насыщенным карминово-красным румянцем.",
-        ripening: "1-я декада октября (съемная)",
-        rootstock: "Айва BA-29, Сеянцы груши кавказской",
-        yield: "30 – 40 т/га",
-        storage: "До апреля-мая без потери плотности",
-        weight: "200 – 260 г",
-        immunity: "Абсолютная устойчивость к термическим ожогам и парше",
-        tip: "Один из самых надежных сортов для регионов с резкими температурными колебаниями. В наличии более 139 000 саженцев."
-      },
-      conf: {
-        badge: "Мировой лидер продаж",
-        title: "Конференция",
-        desc: "Классический сорт, лидер ритейла. Обладает вытянутой бутылочной формой, характерной золотистой оржавленностью и нежнейшей тающей маслянистой мякотью.",
-        ripening: "Середина – конец сентября",
-        rootstock: "Айва BA-29, Айва MC",
-        yield: "35 – 50 т/га в суперинтенсивных садах",
-        storage: "До 5–6 месяцев в камерах",
-        weight: "160 – 220 г",
-        immunity: "Средняя (требует базовой фунгицидной защиты)",
-        tip: "Рекомендуется закладка на капельном поливе и шпалере. Доступно 15 040 шт. двухлетних саженцев 1-го сорта."
-      },
-      williams: {
-        badge: "Десертный эталон",
-        title: "Вильямс (Дюшес)",
-        desc: "Золотой эталон вкусовых качеств. Сочная мякоть с мускатным ароматом и тающей консистенцией для премиального свежего рынка и переработки.",
-        ripening: "Конец августа – начало сентября",
-        rootstock: "Айва BA-29 (с вставкой), Сеянец груши",
-        yield: "25 – 32 т/га",
-        storage: "До 45–60 дней",
-        weight: "170 – 210 г",
-        immunity: "Высокая устойчивость к тле и медянице",
-        tip: "Отличный сорт для получения выручки в начале осеннего сезона продаж. В наличии 1 470 шт."
-      },
-      concord: {
-        badge: "Интенсивная селекция",
-        title: "Конкорд",
-        desc: "Сорт интенсивного типа селекции Конференция × Комис. Компактный габитус кроны, адаптированный для механизированной уборки.",
-        ripening: "Сентябрь - октябрь",
-        rootstock: "Айва BA-29, Айва Сидо",
-        yield: "30 – 42 т/га",
-        storage: "4 – 5 месяцев",
-        weight: "180 – 240 г",
-        immunity: "Повышенная устойчивость к болезням",
-        tip: "Рекомендуется для современных плотных посадок. В наличии 2 320 шт."
-      },
-      bena: {
-        badge: "Крупноплодный сорт",
-        title: "Бена Дисулье",
-        desc: "Ценный сорт с крупными одномерными плодами десертного назначения и гармоничным вкусом.",
-        ripening: "Сентябрь",
-        rootstock: "Айва BA-29",
-        yield: "28 – 35 т/га",
-        storage: "3 – 4 месяца",
-        weight: "200 – 280 г",
-        immunity: "Устойчив к основным патогенам",
-        tip: "Ограниченная партия на складе — 94 шт. двухлеток 1-го сорта."
-      }
-    };
-
-    function openModal(key) {
-      const data = varietyData[key];
-      if (!data) return;
-
-      const modal = document.getElementById('varietyModal');
-      if (!modal) return;
-
-      const setVal = (id, val) => {
-        const el = document.getElementById(id);
-        if (el) el.innerText = val || '—';
-      };
-
-      setVal('mBadge', data.badge);
-      setVal('mTitle', data.title);
-      setVal('mDesc', data.desc);
-      setVal('mRipening', data.ripening);
-      setVal('mRootstock', data.rootstock);
-      setVal('mYield', data.yield);
-      setVal('mStorage', data.storage);
-      setVal('mWeight', data.weight);
-      setVal('mImmunity', data.immunity);
-      setVal('mTip', data.tip);
-
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeModalDirect() {
-      const modal = document.getElementById('varietyModal');
-      if (modal) {
-        modal.classList.remove('active');
-      }
-      document.body.style.overflow = '';
-    }
-
-    function closeModal(e) {
-      if (e.target && e.target.id === 'varietyModal') {
-        closeModalDirect();
-      }
-    }
-
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeModalDirect();
-        closeOrderModalDirect();
-      }
-    });
-
-    function filterData(cat, btn) {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const rows = document.querySelectorAll('#stockTable tbody tr');
-      rows.forEach(r => {
-        if (cat === 'all' || r.dataset.cat === cat) {
-          r.style.display = '';
-        } else {
-          r.style.display = 'none';
-        }
-      });
-    }
-
-    function syncFromInput() {
-      const input = document.getElementById('calc-amount');
-      const range = document.getElementById('calc-range');
-      let val = parseInt(input.value) || 0;
-      if (val >= 500 && val <= 50000) {
-        range.value = val;
-      }
-      runCalc();
-    }
-
-    function syncFromRange() {
-      const input = document.getElementById('calc-amount');
-      const range = document.getElementById('calc-range');
-      input.value = range.value;
-      runCalc();
-    }
-
-    function runCalc() {
-      const price = parseFloat(document.getElementById('calc-category').value) || 0;
-      let qty = parseInt(document.getElementById('calc-amount').value) || 0;
-      if (qty < 0) qty = 0;
-      const total = price * qty;
-      document.getElementById('calc-sum').innerText = total.toLocaleString('ru-RU') + ' ₽';
-    }
-  </script>
-</body>
-</html>
+          <input type="tel" class="lead-input" placeholder="Номер телефона (+7 ...
