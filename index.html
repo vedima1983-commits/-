@@ -1105,6 +1105,37 @@
       .hero h1 { font-size: 1.65rem; }
       .hero-stats-panel { gap: 12px; }
     }
+
+    /* Mobile: fixed header and tap-to-call phone */
+    @media (max-width: 768px) {
+      body { padding-top: 66px; }
+      body > header { position: fixed !important; top: 0; left: 0; right: 0; width: 100%; z-index: 10000; }
+      .nav-wrap { min-height: 66px; }
+      .nav-wrap .logo { flex: 1 1 auto; min-width: 0; }
+      .nav-wrap .logo-title { font-size: clamp(.76rem, 2.9vw, .94rem); }
+      .nav-wrap .logo-subtitle { font-size: clamp(.43rem, 1.55vw, .58rem); }
+      .nav-wrap .header-contacts { display: flex !important; flex: 0 0 auto; min-width: 0; }
+      .nav-wrap .phone-card { padding: 7px 9px; border-radius: 10px; align-items: center; white-space: nowrap; background: #eaf4ec; }
+      .nav-wrap .header-phone { font-size: clamp(.68rem, 2.3vw, .85rem); white-space: nowrap; }
+      .nav-wrap .header-sub { display: none; }
+      .nav-wrap .mobile-menu-btn { font-size: 1.45rem; padding: 3px; }
+      .nav-wrap .nav-links { top: calc(100% + 2px); }
+      html { scroll-padding-top: 78px; }
+      section[id], footer[id] { scroll-margin-top: 78px; }
+    }
+    @media (max-width: 430px) {
+      .nav-wrap .logo img { width: 34px; height: 34px; }
+      .nav-wrap .logo { gap: 5px; }
+      .nav-wrap .logo-subtitle { display: none; }
+      .nav-wrap .header-phone { font-size: .7rem; }
+      .nav-wrap .phone-card { padding: 7px 6px; }
+      .nav-wrap { gap: 5px; }
+    }
+    @media (max-width: 350px) {
+      .nav-wrap .header-phone { font-size: .66rem; }
+      .nav-wrap .logo-title { font-size: .73rem; }
+      .nav-wrap .logo img { width: 30px; height: 30px; }
+    }
   </style>
 </head>
 <body>
