@@ -984,7 +984,7 @@
       border: none;
     }
 
-    /* ФИКС ПРОБЛЕМНЫХ БЛОКОВ НА МОБИЛЬНЫХ */
+    /* ЖЕСТКИЕ СТИЛИ ДЛЯ МОБИЛЬНЫХ ЭКРАНОВ (ПРЕДОТВРАЩЕНИЕ СДВИГОВ И ВЫХОДА ЗА РАМКИ) */
     @media (max-width: 1400px) {
       .mobile-menu-btn { display: block; }
       .nav-links {
@@ -1007,29 +1007,37 @@
     }
 
     @media (max-width: 768px) {
-      .container {
-        padding: 0 12px;
-        max-width: 100%;
-        overflow-x: hidden;
+      html, body {
+        width: 100%;
+        overflow-x: hidden !important;
       }
-      .catalog-lead-box {
-        flex-direction: column;
-        padding: 20px 14px;
-        align-items: stretch;
+      .container {
+        padding: 0 10px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .hero-grid, .calculator-wrapper, .footer-grid, .lead-form-grid, .catalog-lead-box, .hero-stats-panel {
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+      .hero-content-box, .lead-wrapper, .calculator-wrapper, .catalog-lead-box, .hero-stats-panel {
+        padding: 16px 12px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
       }
       .catalog-lead-form {
-        flex-direction: column;
-        width: 100%;
-        max-width: 100%;
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: 100% !important;
       }
-      .catalog-input {
-        width: 100%;
-      }
-      .hero-grid, .calculator-wrapper, .footer-grid, .lead-form-grid {
-        grid-template-columns: 1fr;
-      }
-      .lead-wrapper, .calculator-wrapper {
-        padding: 20px 14px;
+      .catalog-input, .lead-input {
+        width: 100% !important;
+        max-width: 100% !important;
       }
     }
   </style>
