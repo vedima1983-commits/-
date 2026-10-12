@@ -1174,6 +1174,30 @@
     .max-header-link {display:inline-flex;align-items:center;justify-content:center;padding:9px 12px;border-radius:12px;background:#6c3de9;color:white;text-decoration:none;font-size:0.85rem;font-weight:800;white-space:nowrap;}
     .max-header-link:hover {background:#5028bf;}
     @media(max-width:430px){.max-header-link{padding:8px 6px;font-size:.7rem;}}
+
+    /* Header: fits viewport on desktop and stays visible during scrolling */
+    body > header { position: sticky; top: 0; z-index: 10000; width: 100%; max-width: 100vw; }
+    .nav-wrap { max-width: 100%; gap: clamp(5px, .65vw, 12px); }
+    .nav-wrap .logo { min-width: 0; }
+    .nav-wrap .logo-text { min-width: 0; }
+    .nav-wrap .nav-links { min-width: 0; gap: 0; }
+    .nav-wrap .nav-links a { padding-inline: clamp(4px, .55vw, 9px); font-size: clamp(.72rem, .77vw, .82rem); }
+    .nav-wrap .header-contacts { min-width: 0; }
+    .nav-wrap .phone-card { padding-inline: 8px; }
+    .nav-wrap .header-phone { font-size: clamp(.74rem, .9vw, 1rem); }
+    @media (min-width: 1401px) {
+      body > header .container { max-width: none; padding-inline: clamp(12px, 1.3vw, 24px); }
+      .nav-wrap .logo-title { font-size: clamp(.86rem, 1vw, 1.1rem); }
+      .nav-wrap .logo-subtitle { font-size: clamp(.52rem, .63vw, .68rem); letter-spacing: 0; }
+    }
+    @media (min-width: 769px) and (max-width: 1400px) {
+      .nav-wrap .nav-links { top: calc(100% + 2px); }
+    }
+    @media (max-width: 768px) {
+      body > header { position: fixed; }
+      .nav-wrap .max-header-link { padding: 7px 8px; }
+    }
+    input[type="tel"]:invalid:not(:placeholder-shown) { border-color: #bd3d32; }
   </style>
 </head>
 <body>
@@ -1698,7 +1722,7 @@
             <p>Оставьте номер телефона, и менеджер подготовит коммерческое предложение под ваш проект сада.</p>
           </div>
           <form onsubmit="handleLeadSubmit(event)" class="catalog-lead-form" data-form-source="Запрос сметы">
-            <input type="tel" class="catalog-input" placeholder="Номер телефона (+7 ...)" required />
+            <input type="tel" class="catalog-input" placeholder="+7 (999) 123-45-67" inputmode="tel" autocomplete="tel" maxlength="18" minlength="18" pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" title="Введите номер в формате +7 (999) 123-45-67" required />
             <label class="privacy-consent"><input type="checkbox" name="privacy_consent" required> <span>Я согласен(на) на <a href="/consent.html" target="_blank" rel="noopener">обработку персональных данных</a> и ознакомлен(а) с <a href="/privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a>.</span></label>
 <button type="submit" class="btn shimmer-btn" style="padding: 12px 24px; cursor: pointer; border-radius: 10px;">Запросить смету</button>
           </form>
@@ -1765,7 +1789,7 @@
         
         <form onsubmit="handleLeadSubmit(event)" class="lead-form-grid" data-form-source="Консультация агронома">
           <input type="text" class="lead-input" placeholder="Ваше имя" required />
-          <input type="tel" class="lead-input" placeholder="Номер телефона (+7 ...)" required />
+          <input type="tel" class="lead-input" placeholder="+7 (999) 123-45-67" inputmode="tel" autocomplete="tel" maxlength="18" minlength="18" pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" title="Введите номер в формате +7 (999) 123-45-67" required />
           <label class="privacy-consent"><input type="checkbox" name="privacy_consent" required> <span>Я согласен(на) на <a href="/consent.html" target="_blank" rel="noopener">обработку персональных данных</a> и ознакомлен(а) с <a href="/privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a>.</span></label>
 <button type="submit" class="lead-btn shimmer-btn" style="border-radius: 12px;">Получить консультацию и прайс</button>
         </form>
@@ -1836,7 +1860,7 @@
         <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">Заполните форму, и мы свяжемся с вами для оформления договора и уточнения деталей отгрузки.</p>
         <form onsubmit="handleModalSubmit(event)" data-form-source="Бронирование партии" style="display: flex; flex-direction: column; gap: 16px;">
           <input type="text" class="lead-input" style="background: #f5f8f5; color: var(--text); border-color: var(--border);" placeholder="Ваше имя" required />
-          <input type="tel" class="lead-input" style="background: #f5f8f5; color: var(--text); border-color: var(--border);" placeholder="Номер телефона (+7 ...)" required />
+          <input type="tel" class="lead-input" style="background: #f5f8f5; color: var(--text); border-color: var(--border);" placeholder="+7 (999) 123-45-67" inputmode="tel" autocomplete="tel" maxlength="18" minlength="18" pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" title="Введите номер в формате +7 (999) 123-45-67" required />
           <label class="privacy-consent"><input type="checkbox" name="privacy_consent" required> <span>Я согласен(на) на <a href="/consent.html" target="_blank" rel="noopener">обработку персональных данных</a> и ознакомлен(а) с <a href="/privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a>.</span></label>
 <button type="submit" class="btn shimmer-btn" style="width: 100%; padding: 16px; font-size: 1rem; cursor: pointer; border-radius: 12px;">Отправить заявку</button>
         </form>
@@ -1928,11 +1952,50 @@
       }
     }
 
+
+    // Единый формат и проверка телефона во всех формах.
+    function normalizeRuPhone(value) {
+      let digits = String(value).replace(/\D/g, '');
+      if (digits.startsWith('8')) digits = '7' + digits.slice(1);
+      if (digits && !digits.startsWith('7')) digits = '7' + digits;
+      return digits.slice(0, 11);
+    }
+    function formatRuPhone(value) {
+      const digits = normalizeRuPhone(value);
+      if (!digits) return '';
+      const n = digits.slice(1);
+      let text = '+7';
+      if (n.length) text += ' (' + n.slice(0, 3);
+      if (n.length >= 3) text += ')';
+      if (n.length > 3) text += ' ' + n.slice(3, 6);
+      if (n.length > 6) text += '-' + n.slice(6, 8);
+      if (n.length > 8) text += '-' + n.slice(8, 10);
+      return text;
+    }
+    document.querySelectorAll('input[type="tel"]').forEach(input => {
+      input.addEventListener('input', () => {
+        input.value = formatRuPhone(input.value);
+        input.setCustomValidity('');
+      });
+      input.addEventListener('blur', () => {
+        if (input.value && !/^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/.test(input.value)) {
+          input.setCustomValidity('Укажите 10 цифр после +7: +7 (999) 123-45-67');
+        } else input.setCustomValidity('');
+      });
+      input.addEventListener('focus', () => input.setCustomValidity(''));
+    });
+
     // Публичный ключ Web3Forms для отправки заявок.
     const WEB3FORMS_ACCESS_KEY = 'b02db6c3-373d-4f0d-a116-7f5d21cd4ae8';
     async function sendSiteForm(event, modal = false) {
       event.preventDefault();
       const form = event.currentTarget;
+      const phone = form.querySelector('input[type="tel"]');
+      if (phone && !/^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/.test(phone.value)) {
+        phone.setCustomValidity('Введите корректный номер: +7 (999) 123-45-67');
+        phone.reportValidity();
+        return;
+      }
       if (!form.reportValidity()) return;
       const button = form.querySelector('button[type="submit"]');
       const oldText = button.textContent;
@@ -1944,7 +2007,7 @@
       data.append('subject', 'Заявка с сайта pitomnik-kbr.ru');
       data.append('from_name', 'Питомник груш №1');
       data.append('source', form.dataset.formSource || 'Форма сайта');
-      inputs.forEach((input, index) => data.append(input.name || (input.type === 'tel' ? 'phone' : 'name'), input.value.trim()));
+      inputs.forEach((input) => data.append(input.name || (input.type === 'tel' ? 'phone' : 'name'), input.type === 'tel' ? '+7' + normalizeRuPhone(input.value).slice(1) : input.value.trim()));
       data.append('privacy_consent', 'yes');
       data.append('botcheck', '');
       try {
